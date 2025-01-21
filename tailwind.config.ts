@@ -6,7 +6,11 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
-		extend: {}
+		extend: {
+			fontFamily: {
+				title: ['Inria Serif', 'serif']
+			}
+		}
 	},
 
 	plugins: [typography, forms]
