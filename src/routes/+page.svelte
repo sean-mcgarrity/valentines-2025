@@ -15,7 +15,9 @@
 	$inspect(result).with(console.log);
 </script>
 
-<main class="flex h-screen flex-col justify-center bg-pink-100 text-lg tracking-wide">
+<main
+	class="relative flex h-screen flex-col justify-center bg-pink-100 text-lg tracking-wide"
+>
 	{#if steps.current === 'initial'}
 		<InitialStep />
 	{:else if steps.current === 'rejection'}
