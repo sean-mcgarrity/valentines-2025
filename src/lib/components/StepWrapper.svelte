@@ -20,7 +20,7 @@
 		duration: transitionTiming * 0.6,
 		easing: quadInOut
 	}}
-	class={'max-w-screen absolute flex w-full flex-col gap-10 p-4 ' + className}
+	class={'max-w-screen absolute flex w-full flex-col gap-10 p-8 ' + className}
 >
 	{#if steps.current !== 'initial'}
 		<button

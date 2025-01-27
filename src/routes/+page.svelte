@@ -16,8 +16,9 @@
 </script>
 
 <main
-	class="relative flex h-screen flex-col justify-center bg-pink-100 text-lg tracking-wide"
+	class="relative mx-auto flex h-screen max-w-lg flex-col justify-center bg-pink-100 text-lg tracking-wide"
 >
+	<div class="wavy absolute inset-0 h-full w-full"></div>
 	{#if steps.current === 'initial'}
 		<InitialStep />
 	{:else if steps.current === 'rejection'}
@@ -40,7 +41,16 @@
 </main>
 
 <style lang="postcss">
+	body {
+		background-color: red;
+	}
 	main {
+		background: theme('colors.pink.100');
+	}
+	.wavy {
+		box-shadow:
+			2px 3px 20px black,
+			0 0 60px theme('colors.pink.200') inset;
 		background: theme('colors.pink.100');
 	}
 </style>
