@@ -1,30 +1,48 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { fade, slide } from 'svelte/transition';
 	import StepWrapper from '../StepWrapper.svelte';
 	import { steps } from '$lib/state/steps.svelte';
+	import Card from '../neobrutalism/Card.svelte';
+	import Button from '../neobrutalism/Button.svelte';
 
 	let spanishSelected = $state(false);
 </script>
 
 <StepWrapper>
-	<div class="font-title text-2xl font-semibold text-pink-800">Language selection</div>
+	<Card class="gap-4" icon="🌍">
+		<div class="text-pink-800 gap-6 font-title text-2xl font-semibold">
+			Language selection
+		</div>
+		<div>
+			Hola seniorita, given you speak <span class="font-medium italic"
+				>La Eśpanôẽl</span
+			>, please choose a language to continue with.
+		</div>
+	</Card>
 	{#if spanishSelected}
-		<div transition:fade class="rounded border-2 border-red-300 bg-red-200 p-3 text-red-950">
-			<span class="font-medium">Error!</span> I don't speak spanish, so I can't actually make the site
-			in Spanish. Try again.
+		<div transition:fade>
+			<Card class="!bg-black text-nb-red">
+				<div>
+					<span class="font-medium">Uh Oh...</span> I was hoping you just wouldn't
+					click it. Only American works.
+				</div>
+			</Card>
 		</div>
 	{/if}
-	<div class="flex flex-col gap-1 text-pink-700">
-		<div>Hola seniorita, given you speak Spanish, please choose a lanuage to continue with.</div>
-	</div>
-	<div class=" flex gap-8 font-title text-xl text-pink-800">
-		<button
-			class="w-full cursor-pointer text-6xl transition-all active:scale-90"
-			onclick={() => steps.next()}>🇺🇸</button
-		>
-		<button
-			class="w-full cursor-pointer text-6xl transition-all active:scale-90"
-			onclick={() => (spanishSelected = true)}>🇪🇸</button
-		>
+	<div class=" text-pink-800 flex gap-8 font-title text-xl">
+		<div class="w-full">
+			<Button
+				class="w-full cursor-pointer text-8xl"
+				onclick={() => steps.next()}>🇺🇸</Button
+			>
+		</div>
+		{#if !spanishSelected}
+			<div out:slide={{ axis: 'x', duration: 1000 }} class="w-full">
+				<Button
+					class="w-full cursor-pointer text-8xl "
+					onclick={() => (spanishSelected = true)}>🇪🇸</Button
+				>
+			</div>
+		{/if}
 	</div>
 </StepWrapper>

@@ -22,7 +22,7 @@ const stepNavList = [
 	{
 		name: 'day',
 		next: 'activity',
-		prev: 'security'
+		prev: 'langSelect'
 	},
 	{
 		name: 'activity',

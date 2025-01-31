@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { result, type Result } from '$lib/state/result.svelte';
 	import { steps, type Step } from '$lib/state/steps.svelte';
+	import Button from './neobrutalism/Button.svelte';
+	import Card from './neobrutalism/Card.svelte';
 	import StepWrapper from './StepWrapper.svelte';
 	import cx from 'classnames';
 
@@ -9,7 +11,8 @@
 		description,
 		title,
 		key,
-		customHandle
+		customHandle,
+		icon
 	}: Record<'description' | 'title', string> & {
 		key: keyof Result;
 		options: { value?: string; label: string; icon?: string; step?: Step }[];
@@ -19,7 +22,8 @@
 
 	let handle = (chosenOption: (typeof options)[number]) => {
 		if (customHandle) return customHandle(chosenOption);
-		if (chosenOption.value) {
+		if (chosenOption.value && typeof result[key] !== 'object') {
+			// @ts-ignore
 			result[key] = chosenOption.value;
 		}
 		if (chosenOption.step) {
@@ -31,24 +35,33 @@
 </script>
 
 <StepWrapper>
-	<div class="font-title text-4xl font-bold text-pink-800">{title}</div>
-	<div class="flex flex-col gap-1 text-pink-700">
-		<div>{description}</div>
-	</div>
-	<div class=" flex flex-col gap-6 font-sans text-xl text-pink-800">
+	<Card class="gap-4" {icon}>
+		<div class="font-title text-4xl font-bold">{title}</div>
+		<div class="flex flex-col gap-1">
+			<div>{description}</div>
+		</div>
+	</Card>
+	<div class=" text-pink-800 flex flex-col gap-6 font-sans text-2xl">
 		{#each options as option}
-			<button
-				class={cx(
-					'rounded border border-pink-300 bg-pink-200 px-8 py-3',
-					option.icon && 'text-left'
-				)}
+			<Button
+				class={cx('relative', option.icon && 'text-left', 'py-8 pl-24')}
 				onclick={() => handle(option)}
 			>
 				{#if option.icon}
-					<span class="mr-4 align-middle text-4xl">{option.icon} </span>
+					<span class="stroked absolute left-2 top-4 mr-4 text-7xl"
+						>{option.icon}
+					</span>
 				{/if}
-				{option.label}</button
+				{option.label}</Button
 			>
 		{/each}
 	</div>
 </StepWrapper>
+
+<style lang="postcss">
+	.stroked {
+		-webkit-text-stroke: 3px black;
+		text-stroke: 3px black;
+		filter: drop-shadow(3px 3px 0 black);
+	}
+</style>

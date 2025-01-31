@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { result } from '$lib/state/result.svelte';
 	import { steps } from '$lib/state/steps.svelte';
+	import Button from '../neobrutalism/Button.svelte';
+	import Card from '../neobrutalism/Card.svelte';
 	import StepWrapper from '../StepWrapper.svelte';
 
 	const days = [
@@ -29,15 +31,15 @@
 </script>
 
 <StepWrapper>
-	<div class="font-title text-4xl font-bold text-pink-800">What days work?</div>
-	<div class="flex flex-col gap-1 text-pink-700">
-		<div>When are you free?</div>
-	</div>
-	<div class=" flex flex-col gap-8 font-sans text-xl text-pink-800">
+	<Card class="relative">
+		<div class="stroked absolute -right-4 -top-4 rotate-12 text-7xl">🗓️</div>
+		<div class="text-2xl font-semibold">Dates for dates</div>
+		<div class="flex flex-col gap-1">When are you free?</div>
+	</Card>
+	<div class="flex flex-col gap-6 text-2xl">
 		{#each days as dayOption}
-			<button
-				class="rounded border border-pink-300 bg-pink-200 py-2"
-				onclick={() => handleChooseDay(dayOption)}>{dayOption.label}</button
+			<Button onclick={() => handleChooseDay(dayOption)}
+				>{dayOption.label}</Button
 			>
 		{/each}
 	</div>

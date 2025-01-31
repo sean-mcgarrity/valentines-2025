@@ -7,22 +7,16 @@
 	import LocationStep from '$lib/components/steps/LocationStep.svelte';
 	import SecurityStep from '$lib/components/steps/SecurityStep.svelte';
 	import SummaryStep from '$lib/components/steps/SummaryStep.svelte';
-	import StepWrapper from '$lib/components/StepWrapper.svelte';
 	import { result } from '$lib/state/result.svelte';
 	import { steps } from '$lib/state/steps.svelte';
-
-	$inspect(steps.current).with(console.log);
-	$inspect(result).with(console.log);
 </script>
 
 <main
-	class="relative mx-auto flex h-screen max-w-lg flex-col justify-center bg-pink-100 text-lg tracking-wide"
+	class="bg-pink-100 relative mx-auto flex h-screen max-w-lg flex-col justify-center font-montserrat text-lg tracking-wide"
 >
 	<div class="wavy absolute inset-0 h-full w-full"></div>
 	{#if steps.current === 'initial'}
 		<InitialStep />
-	{:else if steps.current === 'rejection'}
-		<StepWrapper>BOO HOO FOR ME</StepWrapper>
 	{:else if steps.current === 'security'}
 		<SecurityStep />
 	{:else if steps.current === 'langSelect'}
@@ -45,12 +39,12 @@
 		background-color: red;
 	}
 	main {
-		background: theme('colors.pink.100');
+		background: theme('colors.nb.pink');
 	}
 	.wavy {
 		box-shadow:
 			2px 3px 20px black,
-			0 0 60px theme('colors.pink.200') inset;
-		background: theme('colors.pink.100');
+			0 0 60px theme('colors.nb.pink') inset;
+		background: theme('colors.nb.pink');
 	}
 </style>

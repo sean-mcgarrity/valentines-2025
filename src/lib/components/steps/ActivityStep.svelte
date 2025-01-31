@@ -4,6 +4,7 @@
 
 <MultiChoiceStep
 	title="Activity"
+	icon="🎇"
 	description="And what would you like to spend the evening doing?"
 	key="activity"
 	options={[

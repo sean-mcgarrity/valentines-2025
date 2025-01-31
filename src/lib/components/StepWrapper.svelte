@@ -20,12 +20,13 @@
 		duration: transitionTiming * 0.6,
 		easing: quadInOut
 	}}
-	class={'max-w-screen absolute flex w-full flex-col gap-10 p-8 ' + className}
+	class={'max-w-screen absolute flex w-full flex-col gap-4 p-6 ' + className}
 >
 	{#if steps.current !== 'initial'}
 		<button
 			onclick={steps.prev}
-			class="text-left text-sm font-light text-pink-950">Back</button
+			class="text-left text-sm font-medium text-white underline underline-offset-4"
+			>Back</button
 		>
 	{/if}
 	{@render children()}
