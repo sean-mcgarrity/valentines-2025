@@ -3,28 +3,28 @@
 </script>
 
 <MultiChoiceStep
-	title="Location"
-	description="And what would you like to spend the evening doing?"
+	title="Food"
+	description="Hmmmm which countries culture shall we experience?"
 	key="location"
 	options={[
 		{
-			value: 'villaitalia',
-			label: 'Villa Italia',
+			value: 'italian',
+			label: 'Italian',
 			icon: '🍕'
 		},
 		{
-			value: 'yoburgers',
-			label: 'Yo Burgers',
+			value: 'burgers',
+			label: 'Burgers',
 			icon: '🍔'
 		},
 		{
-			value: 'whites',
-			label: "White's Tavern",
-			icon: '🐟'
+			value: 'irish',
+			label: 'Irish',
+			icon: '🍲'
 		},
 		{
-			value: 'tacquitos',
-			label: 'Tacquitos',
+			value: 'mexican',
+			label: 'Mexican',
 			icon: '🌮'
 		}
 	] as const}

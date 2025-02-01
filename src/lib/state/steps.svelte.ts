@@ -48,7 +48,8 @@ const stepNavList = [
 		name: 'summary',
 		next: 'summary',
 		prev: 'extras'
-	}
+	},
+	{ name: 'finished' }
 ] as const;
 type StepNavList = typeof stepNavList;
 type StepNav = StepNavList[number];

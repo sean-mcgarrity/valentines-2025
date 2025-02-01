@@ -2,12 +2,12 @@
 	import ActivityStep from '$lib/components/steps/ActivityStep.svelte';
 	import DaysStep from '$lib/components/steps/DaysStep.svelte';
 	import ExtrasStep from '$lib/components/steps/ExtrasStep.svelte';
+	import FinishedStep from '$lib/components/steps/FinishedStep.svelte';
 	import InitialStep from '$lib/components/steps/InitialStep.svelte';
 	import LangStep from '$lib/components/steps/LangStep.svelte';
 	import LocationStep from '$lib/components/steps/LocationStep.svelte';
 	import SecurityStep from '$lib/components/steps/SecurityStep.svelte';
 	import SummaryStep from '$lib/components/steps/SummaryStep.svelte';
-	import { result } from '$lib/state/result.svelte';
 	import { steps } from '$lib/state/steps.svelte';
 </script>
 
@@ -31,6 +31,8 @@
 		<ExtrasStep />
 	{:else if steps.current === 'summary'}
 		<SummaryStep />
+	{:else if steps.current === 'finished'}
+		<FinishedStep />
 	{/if}
 </main>
 

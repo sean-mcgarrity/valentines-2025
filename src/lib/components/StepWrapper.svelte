@@ -22,7 +22,7 @@
 	}}
 	class={'max-w-screen absolute flex w-full flex-col gap-4 p-6 ' + className}
 >
-	{#if steps.current !== 'initial'}
+	{#if steps.current !== 'initial' && steps.current !== 'finished'}
 		<button
 			onclick={steps.prev}
 			class="text-left text-sm font-medium text-white underline underline-offset-4"

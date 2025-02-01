@@ -20,7 +20,7 @@
 			icon: '🍫'
 		},
 		{
-			value: 'hands',
+			value: 'hand holding',
 			label: 'Hand holding',
 			icon: '👫'
 		}

@@ -15,19 +15,19 @@
 			step: 'location'
 		},
 		{
-			value: 'pool',
-			label: 'Pool',
-			icon: '🎱'
-		},
-		{
-			value: 'axes',
-			label: 'Axe Throwing',
-			icon: '🪓'
+			value: 'painting',
+			label: 'Painting',
+			icon: '🎨'
 		},
 		{
 			value: 'movie',
 			label: 'Movie',
 			icon: '📽️'
+		},
+		{
+			value: 'other',
+			label: 'Other',
+			icon: '❓'
 		}
 	] as const}
 />
