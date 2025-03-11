@@ -1,38 +1,12 @@
-# sv
+## Be My Valentine
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This was a quick side project I did to ask someone out in a totally normal and not exceedingly nerdy way. She said yes. 
 
-## Creating a project
+It's built using Svelte and Tailwind, a small table on a Supabase Postgres DB, and is hosted on vercel. It was a fun excuse to play around with the [neobrutalism](https://dribbble.com/shots/20764973-Neobrutalism-UI-How-to) style of web design that is all the rage. 
 
-If you're seeing this, you've probably already done this step. Congrats!
+The first page counted down to Valentine's 2025, but now it just says "0" because we're past the date. 
 
-```bash
-# create a new project in the current directory
-npx sv create
 
-# create a new project in my-app
-npx sv create my-app
-```
 
-## Developing
+https://github.com/user-attachments/assets/382c49a2-64e3-45e1-b4d0-fde9ab8b4b82
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
